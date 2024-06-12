@@ -33,7 +33,10 @@ Mohon untuk melakukan instalasi pada program berikut mengikuti versi yang ada :
 
 1. Node Js : v21.0.0
 2. Nest Js : v10.3.2
-3. MongoDB : v7.0
+3. MongoDB (Database) : v7.0
+4. Mongoose (MongoDB ORM)
+5. Sheet JS (Excel Library for Javascript)
+6. JsPDF (Light PDF Library for Javascript)
 
 ## Langkah Instalasi
 
@@ -70,19 +73,7 @@ $ npm run start
 1. Silahkan lihat terlebih dahulu apa saja API yang tersedia.
 Dikarenakan keterbatasan space dan utilitas di Readme maka saya akan melampikan dokumentasi api pada URL Google Docs Publik ini : [Lihat Dokumentasi API](https://docs.google.com/document/d/1MdGPYFL70tWmhuOWXgYCDsfIURlM4Maq/edit?usp=sharing&ouid=107351349214550915503&rtpof=true&sd=true)
 
-2. Anda bisa melakukan test pemanggilan API Lewat Postman/Tool Lain degan Ketentuan sesuai di Dokumentasi.
-## Test
-
-```bash
-# unit tests
-$ npm run test
-
-# e2e tests
-$ npm run test:e2e
-
-# test coverage
-$ npm run test:cov
-```
+2. Anda bisa melakukan test pemanggilan API Lewat Postman/Tool Lain degan Ketentuan sesuai petunjuk di Dokumentasi Google Docs.
 
 ## Support
 
