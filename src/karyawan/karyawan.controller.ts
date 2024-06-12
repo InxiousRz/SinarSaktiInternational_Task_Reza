@@ -41,12 +41,14 @@ class entity {
 export class KaryawanController {
   constructor(private readonly karyawanService: KaryawanService) {}
 
+  // CREATE KARYAWAN
   @Post()
   @UseInterceptors(ResponseInterceptor)
   create(@Body() createKaryawanDto: CreateKaryawanDto) {
     return this.karyawanService.create(createKaryawanDto);
   }
 
+  // Import CSV Data to System
   @Post('import_csv')
   @UseInterceptors(ResponseInterceptor)
   @UseInterceptors(
@@ -63,6 +65,7 @@ export class KaryawanController {
     return this.karyawanService.bulkCreate(jsonData);
   }
 
+  // Export Data to CSV File
   @Post('export_csv')
   @UseInterceptors(ResponseInterceptor)
   async exportCSV(@Req() req: Request) {
@@ -70,7 +73,7 @@ export class KaryawanController {
 
     // Remove Unecessary Mongose Object keys
     data = data.map((d) => {
-      let result = d['_doc'];
+      const result = d['_doc'];
       return result;
     });
 
@@ -107,6 +110,7 @@ export class KaryawanController {
     return downloadURL;
   }
 
+  // DOWNLOAD BRIDGE CSV
   @Get('download_csv/:filename')
   downloadCSV(
     @Res({ passthrough: true }) res: Response,
@@ -124,10 +128,11 @@ export class KaryawanController {
     return new StreamableFile(file);
   }
 
+  // EXPORT DATA TO PDF FILE
   @Post('export_pdf')
   @UseInterceptors(ResponseInterceptor)
   async exportPDF(@Req() req: Request) {
-    let data = await this.karyawanService.findAllToExport();
+    const data = await this.karyawanService.findAllToExport();
 
     // Remove Unecessary Mongose Object keys
     let index = 1;
@@ -178,6 +183,7 @@ export class KaryawanController {
     return downloadURL;
   }
 
+  // DOWNLOAD BRIDGE FOR PDF
   @Get('download_pdf/:filename')
   downloadPDF(
     @Res({ passthrough: true }) res: Response,
@@ -195,19 +201,22 @@ export class KaryawanController {
     return new StreamableFile(file);
   }
 
+  // FIND ALL KARYAWAN
   @Get()
   @UseInterceptors(ResponseInterceptor)
   findAll() {
     return this.karyawanService.findAll();
   }
 
+  // FIND KARYAWAN BY ID
   @Get(':id')
   @UseInterceptors(ResponseInterceptor)
   findOne(@Param('id') id: string) {
     return this.karyawanService.findOne(id);
   }
 
-  @Post('paginate')
+  // FIND KARYAWAN WITH FILTER AND SIMPLE PAGINATION
+  @Get('search/paginate/')
   @UseInterceptors(ResponseInterceptor)
   findAllPagination(
     @Query('nama') nama: string = '',
@@ -227,6 +236,7 @@ export class KaryawanController {
     );
   }
 
+  // UPDATE KARYAWAN BY ID
   @Patch(':id')
   @UseInterceptors(ResponseInterceptor)
   update(
@@ -236,6 +246,7 @@ export class KaryawanController {
     return this.karyawanService.update(id, updateKaryawanDto);
   }
 
+  // DELETE KARYAWAN BY ID
   @Delete(':id')
   @UseInterceptors(ResponseInterceptor)
   remove(@Param('id') id: string) {

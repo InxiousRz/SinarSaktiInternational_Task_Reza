@@ -26,25 +26,51 @@
 
 [Nest](https://github.com/nestjs/nest) framework TypeScript starter repository.
 
-## Installation
+Hasil Coding Test Project dari PT Sinar Sakti Internasional Oleh : Reza Fahrul Rozik
 
+## Environment yang saya gunakan
+Mohon untuk melakukan instalasi pada program berikut mengikuti versi yang ada :
+
+1. Node Js : v21.0.0
+2. Nest Js : v10.3.2
+3. MongoDB : v7.0
+
+## Langkah Instalasi
+
+1. Clone Project dari GIT.
+```bash
+$ git clone https://github.com/InxiousRz/SinarSaktiInternational_Task_Reza.git
+```
+
+2. Instalasi Library yang diperlukan Project Ini lewat NPM.
 ```bash
 $ npm install
 ```
 
-## Running the app
-
+3. Pastikan Anda sudah menginstall Database MongoDB
+   
+4. Rename file <strong>*.env.example*</strong> menjadi <strong>*.env*</strong> saja dan ganti parameter berikut sesuai authentikasi koneski Database MongoDB di Lokal anda.
 ```bash
-# development
+# Disini contoh koneksi Fresh install yang tidak menggunakan username/password untuk authentikasi koneksi dan Nama Database TestDB
+MONGODB_URI==mongodb://localhost:27017/TestDB
+
+# Kalau MongoDB anda sudah di setup authentikasi silahkan menyesuaikan format string koneksi dengan Username dan Password anda sekiranya dengan format berikut
+MONGODB_URI==mongodb://Username:Password@Domain_Host:Port_MongoDB/Nama_Database
+
+```
+4. Jalankan Dev Server Nest JS.
+```bash
 $ npm run start
-
-# watch mode
-$ npm run start:dev
-
-# production mode
-$ npm run start:prod
 ```
 
+1. Buka halaman  http://localhost:3000 untuk mengecek apakah program sudah berjalan.
+
+## Penggunaan API
+
+1. Silahkan lihat terlebih dahulu apa saja API yang tersedia.
+Dikarenakan keterbatasan space dan utilitas di Readme maka saya akan melampikan dokumentasi api pada URL Google Docs Publik ini : [Lihat Dokumentasi API](https://docs.google.com/document/d/1MdGPYFL70tWmhuOWXgYCDsfIURlM4Maq/edit?usp=sharing&ouid=107351349214550915503&rtpof=true&sd=true)
+
+2. Anda bisa melakukan test pemanggilan API Lewat Postman/Tool Lain degan Ketentuan sesuai di Dokumentasi.
 ## Test
 
 ```bash
