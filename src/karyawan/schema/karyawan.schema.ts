@@ -1,5 +1,6 @@
 import { Prop, Schema, SchemaFactory } from '@nestjs/mongoose';
 import { HydratedDocument } from 'mongoose';
+import { format } from 'date-fns-tz';
 
 export enum Status {
   KONTRAK = 'kontrak',
@@ -24,9 +25,13 @@ export class Karyawan {
   jabatan: string;
 
   @Prop({ required: true })
-  departemen: string;
+  departmen: string; // Based on CSV Format
 
-  @Prop({ required: true })
+  @Prop({
+    required: true,
+    get: (tanggal_masuk) =>
+      format(tanggal_masuk, 'yyyy/M/dd', { timeZone: 'Asia/Jakarta' }),
+  })
   tanggal_masuk: Date;
 
   @Prop({ required: true })

@@ -19,7 +19,44 @@ export class KaryawanService {
   async findAll(): Promise<Karyawan[]> {
     const allKaryawan = await this.karyawanModel
       .find()
-      .sort({ createdAt: -1 })
+      .sort({ createdAt: 1 })
+      .exec();
+    return allKaryawan;
+  }
+
+  async findAllPagination(
+    nama: string,
+    jabatan: string,
+    departmen: string,
+    status: string,
+    limit: number,
+    offset: number,
+  ) {
+    const allKaryawan = await this.karyawanModel
+      .find({
+        nama: { $regex: '.*' + nama + '.*' },
+        jabatan: { $regex: '.*' + jabatan + '.*' },
+        departmen: { $regex: '.*' + departmen + '.*' },
+        status: { $regex: '.*' + status + '.*' },
+      })
+      .sort({ createdAt: 1 })
+      .limit(limit)
+      .skip(offset)
+      .exec();
+    const result = {
+      result: allKaryawan,
+      count: allKaryawan.length,
+      limit: limit,
+      offset: offset,
+    };
+    return result;
+  }
+
+  async findAllToExport(): Promise<Karyawan[]> {
+    const allKaryawan = await this.karyawanModel
+      .find()
+      .select('-_id nama nomor jabatan departmen tanggal_masuk foto status')
+      .sort({ createdAt: 1 })
       .exec();
     return allKaryawan;
   }
@@ -66,5 +103,10 @@ export class KaryawanService {
         description: 'Provided ID is Invalid MongoDB ID : ' + id,
       });
     }
+  }
+
+  async bulkCreate(jsonData: any[]) {
+    const createdKaryawans = await this.karyawanModel.insertMany(jsonData);
+    return createdKaryawans;
   }
 }
