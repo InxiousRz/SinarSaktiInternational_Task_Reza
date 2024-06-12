@@ -29,18 +29,18 @@
 Hasil Coding Test Project dari PT Sinar Sakti Internasional Oleh : Reza Fahrul Rozik
 
 ## Environment yang saya gunakan
-Mohon untuk melakukan instalasi pada program berikut mengikuti versi yang ada :
+Mohon untuk melakukan instalasi pada sebagian program berikut mengikuti versi yang ada sebelum menjalankan program :
 
-1. Node Js : v21.0.0
-2. Nest Js : v10.3.2
-3. MongoDB (Database) : v7.0
+1. Node Js : v21.0.0 ([Cek](https://nodejs.org/en))
+2. Nest Js : v10.3.2 ([Cek](https://docs.nestjs.com/first-steps))
+3. MongoDB (Database) : v7.0 ([Cek](https://www.mongodb.com/try/download/community))
 4. Mongoose (MongoDB ORM)
 5. Sheet JS (Excel Library for Javascript)
 6. JsPDF (Light PDF Library for Javascript)
 
 ## Langkah Instalasi
 
-1. Clone Project dari GIT.
+1. Clone Project dari GIT ini.
 ```bash
 $ git clone https://github.com/InxiousRz/SinarSaktiInternational_Task_Reza.git
 ```
@@ -50,9 +50,9 @@ $ git clone https://github.com/InxiousRz/SinarSaktiInternational_Task_Reza.git
 $ npm install
 ```
 
-3. Pastikan Anda sudah menginstall Database MongoDB
+3. Pastikan Anda sudah menginstall Database MongoDB dan sudah bisa berkoneksi dengan Database Lokal anda.
    
-4. Rename file <strong>*.env.example*</strong> menjadi <strong>*.env*</strong> saja dan ganti parameter berikut sesuai authentikasi koneski Database MongoDB di Lokal anda.
+4. Buka code pada program code editor Seperti VSCode/Editor Lain dan Rename file <strong>*.env.example*</strong> menjadi <strong>*.env*</strong> saja dan ganti parameter berikut sesuai authentikasi koneski Database MongoDB di Lokal anda.
 ```bash
 # Disini contoh koneksi Fresh install yang tidak menggunakan username/password untuk authentikasi koneksi dan Nama Database TestDB
 MONGODB_URI==mongodb://localhost:27017/TestDB
@@ -61,19 +61,20 @@ MONGODB_URI==mongodb://localhost:27017/TestDB
 MONGODB_URI==mongodb://Username:Password@Domain_Host:Port_MongoDB/Nama_Database
 
 ```
-4. Jalankan Dev Server Nest JS.
+4. Setelah itu harap buka Terminal/Command Prompt di perangkat anda, pastikan lokasi command berada pada root directory repositori ini yang telah anda clone. Lalu jalankan Dev Server Nest JS dengan mengetik command di bawah pada terminal anda.
 ```bash
 $ npm run start
 ```
 
-1. Buka halaman  http://localhost:3000 untuk mengecek apakah program sudah berjalan.
+1. Buka halaman  http://localhost:3000 pada browser pilihan anda untuk mengecek apakah program sudah berjalan.
 
 ## Penggunaan API
 
-1. Silahkan lihat terlebih dahulu apa saja API yang tersedia.
-Dikarenakan keterbatasan space dan utilitas di Readme maka saya akan melampikan dokumentasi api pada URL Google Docs Publik ini : [Lihat Dokumentasi API](https://docs.google.com/document/d/1MdGPYFL70tWmhuOWXgYCDsfIURlM4Maq/edit?usp=sharing&ouid=107351349214550915503&rtpof=true&sd=true)
+1. Pertama tama silahkan untuk mendownload file dokumentasi API di Link Google Docs dibawah.
+Dikarenakan keterbatasan space dan utilitas di Readme maka saya akan melampikan dokumentasi api pada URL Google Docs Publik ini : [Lihat Dokumentasi API disini](https://docs.google.com/document/d/1MdGPYFL70tWmhuOWXgYCDsfIURlM4Maq/edit?usp=sharing&ouid=107351349214550915503&rtpof=true&sd=true)
 
-2. Anda bisa melakukan test pemanggilan API Lewat Postman/Tool Lain degan Ketentuan sesuai petunjuk di Dokumentasi Google Docs.
+2. Setelah meninjau dokumentasi anda bebas bisa melakukan test pemanggilan API Lewat Postman/Tool Lain degan Ketentuan sesuai petunjuk di Dokumentasi Google Docs.
+3. Untuk melihat data di database lebih rinci anda bisa melihatnya lewat Aplikasi MongoDB Compass [Disini](https://www.mongodb.com/products/tools/compass)
 
 ## Support
 
