@@ -61,12 +61,12 @@ MONGODB_URI==mongodb://localhost:27017/TestDB
 MONGODB_URI==mongodb://Username:Password@Domain_Host:Port_MongoDB/Nama_Database
 
 ```
-4. Setelah itu harap buka Terminal/Command Prompt di perangkat anda, pastikan lokasi command berada pada root directory repositori ini yang telah anda clone. Lalu jalankan Dev Server Nest JS dengan mengetik command di bawah pada terminal anda.
+5. Setelah itu harap buka Terminal/Command Prompt di perangkat anda, pastikan lokasi command berada pada root directory repositori ini yang telah anda clone. Lalu jalankan Dev Server Nest JS dengan mengetik command di bawah pada terminal anda.
 ```bash
 $ npm run start
 ```
 
-1. Buka halaman  http://localhost:3000 pada browser pilihan anda untuk mengecek apakah program sudah berjalan.
+6. Buka halaman  http://localhost:3000 pada browser pilihan anda untuk mengecek apakah program sudah berjalan.
 
 ## Penggunaan API
 
@@ -75,16 +75,6 @@ Dikarenakan keterbatasan space dan utilitas di Readme maka saya akan melampikan 
 
 2. Setelah meninjau dokumentasi anda bebas bisa melakukan test pemanggilan API Lewat Postman/Tool Lain degan Ketentuan sesuai petunjuk di Dokumentasi Google Docs.
 3. Untuk melihat data di database lebih rinci anda bisa melihatnya lewat Aplikasi MongoDB Compass [Disini](https://www.mongodb.com/products/tools/compass)
-
-## Support
-
-Nest is an MIT-licensed open source project. It can grow thanks to the sponsors and support by the amazing backers. If you'd like to join them, please [read more here](https://docs.nestjs.com/support).
-
-## Stay in touch
-
-- Author - [Kamil Myśliwiec](https://kamilmysliwiec.com)
-- Website - [https://nestjs.com](https://nestjs.com/)
-- Twitter - [@nestframework](https://twitter.com/nestframework)
 
 ## License
 
